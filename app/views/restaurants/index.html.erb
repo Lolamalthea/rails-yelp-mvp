@@ -1,0 +1,11 @@
+<h1>Copycat Yelp</h1>
+
+<% @restaurants.each do |restaurant| %>
+  <h2><%= restaurant.name %></h2>
+  <p><%= restaurant.address %></p>
+  <p><%= restaurant.phone_number %></p>
+  <p><%= link_to "Reviews", restaurant_path(restaurant) %> | <%= link_to "Edit the restaurant", edit_restaurant_path(restaurant) %> | <%= link_to "Delete the restaurant", restaurant_path(restaurant), method: :delete,
+      data: { confirm: "Are you sure?" } %> | <%= link_to "Add a review", edit_restaurant_path(restaurant) %> </p>
+<% end %>
+
+<%= link_to "Create a new restaurant", new_restaurant_path %>
